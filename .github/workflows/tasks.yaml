@@ -1,0 +1,17 @@
+name: Run Tasks
+
+on:
+  workflow_dispatch:
+
+jobs:
+  explorer:
+    name: Explorer self hosted
+    runs-on: [self-hosted, jammy, X64]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Log in to registries
+        run: |
+          uname -a
+          lsb_release -a
